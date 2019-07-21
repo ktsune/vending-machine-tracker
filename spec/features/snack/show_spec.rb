@@ -1,18 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe 'User' do
-  describe 'When I visit a vending machine show page' do
+  describe 'When I visit a snack show page' do
     before :each do
       @owner = Owner.create(name: "Sam's Snacks")
       @dons  = @owner.machines.create(location: "Don's Mixed Drinks")
       @kitkat = @dons.snacks.create(name: "Kit Kat", price: 2)
     end
 
-    it 'I see the name of all of the snacks associated with that vending machine along with their price' do
-      visit machine_path(@kitkat)
+    it 'I see info form that snack' do
+      visit snack_path(@kitkat)
 
       expect(page).to have_content(@kitkat.name)
       expect(page).to have_content(@kitkat.price)
+      expect(page).to have_content("Average Price: $2.00")
+      expect(page).to have_content("Count of Items: 1")
+      expect(page).to have_content("Locations: Don's Mixed Drinks")
     end
   end
 end
