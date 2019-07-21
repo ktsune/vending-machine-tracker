@@ -5,4 +5,12 @@ class Machine < ApplicationRecord
   validates_presence_of :location
 
   belongs_to :owner
+
+  def average_price
+    self.snacks.average(:price).to_i
+  end
+
+  def count_of_items
+    self.snacks.count 
+  end
 end

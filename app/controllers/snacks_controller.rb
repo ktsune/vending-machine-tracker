@@ -1,8 +1,6 @@
 class SnacksController < ApplicationController
   def show
-    @snack = Snack.find(params[:id])
-    @snacks = Snack.all
-    # binding.pry
-    # @average_price = @snacks.average_price
+      @snack = Snack.find(params[:id])
+      @machine = Machine.find(params[:id])
   end
 end
