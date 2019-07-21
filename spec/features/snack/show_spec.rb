@@ -13,9 +13,9 @@ RSpec.describe 'User' do
 
       expect(page).to have_content(@kitkat.name)
       expect(page).to have_content(@kitkat.price)
-      expect(page).to have_content("Average Price")
-      expect(page).to have_content("Count of Items")
-      expect(page).to have_content("Locations")
+      expect(page).to have_content("Average Price: $2.00")
+      expect(page).to have_content("Count of Items: 1")
+      expect(page).to have_content("Locations: Don's Mixed Drinks")
     end
   end
 end
