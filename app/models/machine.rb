@@ -11,6 +11,7 @@ class Machine < ApplicationRecord
   end
 
   def count_of_items
-    self.snacks.count 
+    self.snacks.count
   end
+
 end
